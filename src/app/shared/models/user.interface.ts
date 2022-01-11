@@ -1,5 +1,5 @@
 export interface User{
-    email: string;
+    usuario: string;
 }
 
 export interface dataResponseUser{

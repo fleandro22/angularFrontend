@@ -53,10 +53,18 @@
 }
 
 .message-warning{
-  color:#eab30e;
+  color:#FF9600;
   font-weight: 600;
-  background-color: #fff3cd;
+  background-color: #FFE9C9;
   margin-top: 25px; 
+  display: block;
+  & svg{
+      padding-right: 10px;
+  }
+  & div{
+      padding-left: 10px;
+      border-left: 1px solid #FF9600;
+  }
 }
 
 .subtitle{
