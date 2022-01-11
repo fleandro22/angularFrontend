@@ -35,7 +35,7 @@ export class AuthService {
         if (response.statusResponse === 'SUCCESS') {
           this.isLogged = true;
           this.saveData(response.data?.nombre, response.data?.cargo);
-          this.userDataIn.next({"name":response.data?.nombre,"cargo":response.data?.cargo});
+          this.userDataIn.next({"name":response.data?.nombre,"employment":response.data?.cargo});
         } else {
           this.isLogged = false;
         }

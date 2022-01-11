@@ -17,7 +17,6 @@ export class NavbarComponent implements OnInit {
   constructor(public authS:AuthService, private router: Router,) { }
 
   async ngOnInit() {
-    console.log("mi inicio-->", this.authS.userLogged)
     if(this.authS.isLogged ) {
       this.userData = this.authS.getDataUser()
     } else {
