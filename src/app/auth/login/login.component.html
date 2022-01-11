@@ -1,0 +1,33 @@
+  <div class="container" >
+    <div class="row d-flex justify-content-center align-items-center" [class.login]="screenSize>=768">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="text-center">
+            <div class="mt-md-4 pb-5">
+              <h2 class="text-center mt-5">End To End</h2>
+              <form [formGroup]="loginForm" (ngSubmit)="handleLogin()"> 
+                <div class="form-outline form-white mt-5">
+                  <input type="text" id="username" name="username" formControlName="username" class="form-control form-control-lg" placeholder="Usuario"/>
+                </div>
+
+                <button [style.width]="'60%'" class="btn btn-primary btn-lg  mt-4" type="submit">Ingresar</button>
+              </form>
+            </div>
+
+          </div>
+        
+        </div>
+    </div>
+
+    <div *ngIf="messageError.length" [style.background]="'#FFE9C9'" class="alert alert-warning d-flex align-items-center" role="alert">
+        <i class="bi bi-exclamation-circle"></i>
+        <div>
+            {{messageError}}
+        </div>
+    </div>
+
+  </div>
+
+  <div>
+     
+  </div>
+

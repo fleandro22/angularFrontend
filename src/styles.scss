@@ -1,1 +1,179 @@
-/* You can add global styles to this file, and also import other style files */
+// AzulOscuro:      002449
+// AzulClaro:       008ACC
+// GrisOscuro:      787B81
+// GrisClaro:       EBEBEB
+// GrisTexto:       898D95
+
+// Letra:           Roboto
+
+// AlertBackground: FFE9C9
+// AlertText :      FF9600
+
+.logo_navbar{
+    height: 40px;
+}
+
+.navbar{
+    border-bottom: 0.5px solid #EBEBEB
+}
+.navbar-brand {
+     margin:0 auto;
+}
+
+.footer{  
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    //display:none;
+}
+
+.modal-dialog{
+    margin: 0;
+    left:20%;
+    width: 80%;
+}
+
+.icon_menu{
+    display:block
+}
+
+#main_nav{
+    display:none;
+}
+
+.navbar-nav{
+    flex-direction: row;
+}
+
+.user-name{
+    font-size: 16px;
+    color:#002449;
+    display: flex;
+}
+
+.user-employment{
+    font-size: 10px;
+    color:#787B81;
+    text-align: end;
+}
+
+.user-logo {
+    margin-right: 10px;
+    margin-left: 10px;
+    & img {
+        border-radius: 50%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.navbar-nav{
+    & .dropdown-menu {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.dropdown-item{
+    color:#002449;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.modal-content{
+    height: 100vh;
+}
+
+.user-data-mv{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    
+}
+
+.modal-body {
+    & ul{
+        list-style: none;
+        margin-top: 50px;
+        padding: 0;
+        text-align: center;
+    }
+
+}
+
+.user-logo-mv{
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 30px;
+    & img{
+        width: 100%;
+        border-radius: 50%;
+    }
+}
+
+.usern-name-mv{
+    margin: 0 auto;
+    margin-top: 20px;
+    color:#002449;
+}
+
+.usern-employment-mv{
+    margin: 0 auto;
+    color:#787B81;
+    & span{
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+}
+
+.logout{
+    color:#008ACC;
+}
+
+
+//Tablets
+@media screen and (min-width: 40em) {
+    .icon_menu{
+        display:block
+    }
+    .modal-dialog{
+        left: 40%;
+    }
+    // .navbar-brand {
+    //     margin:0;
+    // }
+    // #main_nav{
+    //     display:block;
+    // }
+
+    // .footer{
+    //     display:block;
+    // }
+
+    .dropdown-item{
+        font-weight: 400;
+    }
+}
+//Desktop
+@media screen and (min-width: 62em) {
+   .icon_menu{
+        display:none
+    }
+    .navbar-brand {
+        margin:0;
+    }
+
+    .footer{
+        position:relative;
+    }
+
+    #main_nav{
+        display:block;
+    }
+
+    .dropdown-item{
+        font-weight: 400;
+    }
+}

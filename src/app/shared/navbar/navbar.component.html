@@ -1,0 +1,82 @@
+<nav class="autohide navbar navbar-expand-lg">
+ <div class="container-fluid">
+ 
+  <a class="navbar-brand">
+    <img src="assets/logo_mb.png" class="logo_navbar">
+  </a>
+
+  <a href="#" *ngIf="authS.isLogged"  class="text-decoration-none icon_menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+    </svg>
+  </a>
+
+  <div *ngIf="authS.isLogged" class="navbar" id="main_nav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <div class="user-name">{{userData.name || (authS.userLogged | async).name}}</div>
+        <div class="user-employment">{{userData.employment || (authS.userLogged | async).employment}}</div>
+      </li>
+
+      <li class="nav-item user-logo"> <img src="https://i.pravatar.cc/50" alt="userimg"/> </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle dropleft" href="#" id="navbarDropdown" role="button" 
+          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        </a>
+        <div [style.left]="'auto'" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Mi información</a>
+          <a class="dropdown-item" href="#">Procesos pendientes</a>
+          <a class="dropdown-item" href="#">Cambiar clave</a>
+          <br>
+          <a class="dropdown-item logout" href="#" (click)="handleLogout()">Salir</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+ </div> 
+</nav>
+
+<!-- Modal -->
+	<div class="modal rigth fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+          <div class="user-data-mv">
+            <div class="user-logo-mv">
+              <img src="https://i.pravatar.cc/50" alt="userimg"/>
+            </div>
+            <div class="usern-name-mv">
+                <h1>{{userData.name || (authS.userLogged | async).name}}</h1> 
+            </div>
+            <div class="usern-employment-mv">
+              <span>{{userData.employment || (authS.userLogged | async).employment}}</span>
+            </div>
+
+            <ul>
+              <li>
+                <a class="dropdown-item" href="#">Mi información</a>
+                <a class="dropdown-item" href="#">Procesos pendientes</a>
+                <a class="dropdown-item" href="#">Cambiar clave</a>
+                <br>
+                <a class="dropdown-item logout" href="#" (click)="handleLogout()">Salir</a>
+              </li>
+              
+            </ul>
+          </div>
+				</div>
+        
+        <div class="modal-footer">
+        
+            <div class="container-fluid text-center">
+              <img src="assets/logo_footer.png" class="logo_navbar">
+            </div>
+          
+        </div>
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+
+ 
+
+ 
