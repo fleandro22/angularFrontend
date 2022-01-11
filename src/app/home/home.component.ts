@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/services/auth.service';
+import { HomeService } from '../auth/services/home.service';
 
 
 @Component({
@@ -9,10 +9,38 @@ import { AuthService } from '../auth/services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public authS: AuthService) { }
+  constructor(public homeS: HomeService) { }
+
+  dataCompany:any = [ {
+    "nit": "",
+    "nombre": "",
+    "capa": "",
+    "segmento": ""
+  }]
 
   ngOnInit(): void {
+
+    this.handleLogin();
   }
   
+  handleLogin() {
+    const nit = "8002201542";
+
+    try {
+      this.homeS.getCompany(nit).subscribe((res) => {
+        if (res.statusResponse !== 'FAILED') {
+          const dataCompanyResponse:any = {
+            "nit":  res.data.nit,
+            "nombre": res.data.nombre,
+            "capa": res.data.capa,
+            "segmento": res.data.segmento
+          }
+
+           this.dataCompany.push(dataCompanyResponse)
+        }
+      },error => error)
+
+    } catch(error) { error}
+  }
 
 }

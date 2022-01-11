@@ -28,7 +28,7 @@ export class AuthService {
   login(userData:User): Observable<any> {
 
     return this.htttp
-    .post<responseUser>(`${environment.BASE_URL}`, userData)
+    .post<responseUser>(`${environment.BASE_URL}/auth`, userData)
     .pipe(
       map( (response:responseUser) => {
 

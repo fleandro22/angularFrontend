@@ -1,9 +1,9 @@
  <div class="hero primary-color">
-    <div class="h2 hero-title">Flotas la Macarena</div>
-    <span class="subtitle text-muted text-center">Nit: 800220154</span>
+    <div class="h2 hero-title" >{{dataCompany[1].nombre}}</div>
+    <span class="subtitle text-muted text-center">Nit: {{dataCompany[1]?.nit}}</span>
     <div class="hero-subtitle">
-    <div class="subtitle">Capa:Oro </div>
-    <div class="subtitle">Segmento: A </div>
+    <div class="subtitle">Capa: {{dataCompany[1]?.capa}} </div>
+    <div class="subtitle">Segmento: {{dataCompany[1].segmento}}</div>
     </div>
 </div>
 
